@@ -1,9 +1,8 @@
 import React from 'react'
+import AppRoutes from './routes/AppRoutes'
 
 const App = () => {
-  return (
-    <div className='bg-slate-400'>App</div>
-  )
+  return <AppRoutes/>
 }
 
 export default App
