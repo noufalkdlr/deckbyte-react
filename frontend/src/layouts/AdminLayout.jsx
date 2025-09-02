@@ -11,22 +11,21 @@ const AdminLayout = () => {
     <div className="flex h-screen">
       {/* -------------- side bar -------------- */}
 
-      <aside className="w-64  bg-yellow-300 overflow-y-auto ">
+      <aside className="hidden md:block w-[280px] bg-[#0a121a]">
         <Sidebar />
       </aside>
 
       {/* -------------- main contet area -------------- */}
 
       <div className="flex flex-col flex-1 ">
-        <header className="h-16 bg-neutral-300  flex items-center px-4">
+        <header className="h-16 bg-white">
           <Header />
         </header>
 
-        <main className="#flex-1 h-full bg-cyan-300 overflow-auto">
+        <main className="flex-1 h-full bg-[#f9fafb] overflow-auto">
           <Outlet />
         </main>
       </div>
-
     </div>
   );
 };
