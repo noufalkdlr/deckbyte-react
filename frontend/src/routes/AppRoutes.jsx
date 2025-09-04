@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import ProtectedRoute from "./ProtectedRoute";
+
 import PublicLayout from "../layouts/PublicLayout";
 import AdminLayout from "../layouts/AdminLayout";
 
@@ -12,6 +14,7 @@ import About from "../pages/public/About";
 import Dashboard from "../pages/admin/Dashboard";
 import User from "../pages/admin/user";
 import NotFound from "../pages/error/NotFound";
+import AdminLogin from "../pages/admin/AdminLogin";
 
 const AppRoutes = () => {
   return (
@@ -23,18 +26,21 @@ const AppRoutes = () => {
         <Route path="/about" element={<About />} />
       </Route>
 
-      {/* admin routes */}
+      {/* Admin login */}
+      <Route path="/admin/login" element={<AdminLogin />} />
 
-      <Route path="/admin" element={<AdminLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="users" element={<User />} />
+      {/* Protected admin routes */}
+
+      <Route path="/admin" element={<ProtectedRoute />}>
+        <Route element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="users" element={<User />} />
+        </Route>
       </Route>
 
       {/* fallback route */}
 
       <Route path="*" element={<NotFound />} />
-
-      
     </Routes>
   );
 };
