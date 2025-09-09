@@ -12,7 +12,7 @@ import About from "../pages/public/About";
 
 //admin pages
 import Dashboard from "../pages/admin/Dashboard";
-import User from "../pages/admin/user";
+import User from "../pages/admin/User";
 import NotFound from "../pages/error/NotFound";
 import AdminLogin from "../pages/admin/AdminLogin";
 
